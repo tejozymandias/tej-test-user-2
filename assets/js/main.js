@@ -3,7 +3,7 @@
 	(n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
   var r=t.createElement("script");r.async=!0,r.src=a+"?a="+e;
   var c=t.getElementsByTagName("script")[0];c.parentNode.insertBefore(r,c)
-  })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-DT38BLOGLNV8-2");
+  })(window,document,"https://web-sdk.aptrinsic.com/api/aptrinsic.js","AP-AP-WYZIJSXFXG9H-2");
 
 
 
@@ -40,19 +40,20 @@ function logMeIn(){
 			const name = formInputs[2].value.split(' ');
 			const firstName = name[0];
 			const lastName = name[1];
-			const userId = email.split("@")[0];
+			//const userId = email.split("@")[0];
 			// const uniqueNumber = "UID"+Math.floor(Math.random() * 9999999);
 			aptrinsic("identify",
 			{
-				"id" : userId,
+				"id" : email,
 				"email": email,
 				"firstName": firstName,
 				"lastName": lastName
 
 			},{
-				"id": domain //Required				
+				"id": "px-" + domain, //Required	
+				"name": domain
 			});
-			console.log(email,firstName,lastName,userId,domain);
+			
 			alert("Logged in user id: "+ firstName);
 			window.location = "main.html";	
 		} else{
